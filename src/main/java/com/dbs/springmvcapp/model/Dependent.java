@@ -20,7 +20,7 @@ public class Dependent {
     @ManyToOne
     @JoinColumn(name = "emp_id", nullable = false)
     private Employee employee;
-
+    
 
     public Dependent(String name, int age) {
         this.name = name;

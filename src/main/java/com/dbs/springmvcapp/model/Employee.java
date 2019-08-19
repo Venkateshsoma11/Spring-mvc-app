@@ -38,19 +38,19 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @NotBlank(message = "Name cannot be null")
+   // @NotBlank(message = "Name cannot be null")
     @Column(name = "emp_name")
     private String name;
 
     @Column(name = "department_name")
     private String department_name;
     
-    @Range(min = 18, max = 58, message = "Employee age should be between 18 and 58")
+   // @Range(min = 18, max = 58, message = "Employee age should be between 18 and 58")
     private int age;
 
     private LocalDate dateOfBirth;
 
-    @Range(min = 25000, max = 75000)
+   // @Range(min = 25000, max = 75000)
     private double salary;
 
     @OneToOne(cascade = CascadeType.ALL)
@@ -62,10 +62,11 @@ public class Employee {
     @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<Dependent> dependents = new HashSet<>();
     
-    public Employee(long id, String name){
+    public Employee(long id, String name,int age){
         this.id = id;
         this.name = name;
-        this.department_name=department_name;
+        this.age=age;
+       //this.department_name=department_name;
         
     }
     public void addBankAccount(BankAccount bankAccount) {

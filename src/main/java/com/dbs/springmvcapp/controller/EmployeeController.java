@@ -64,7 +64,7 @@ public class EmployeeController {
     public String registerUser( @Valid @ModelAttribute("employee") Employee employee,
             BindingResult bindingResult) throws IOException {
     	
-    	System.out.println(employee.getName());
+    	System.out.println(employee);
         Address address = new Address();
         address.setStreet("18th Main");
         address.setCity("Bangalore");
@@ -90,8 +90,8 @@ public class EmployeeController {
         employee.addDependent(dependent3);
 
        // employee.addDependent(dependent2);
-        employee.setAddress(address);
-        address.setEmployee(employee);
+        //employee.setAddress(address);
+        //address.setEmployee(employee);
        
         this.employeeService.saveEmployee(employee);
         return "dashboard";
